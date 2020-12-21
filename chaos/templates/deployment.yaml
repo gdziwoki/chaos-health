@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "chaos2.fullname" . }}
+  name: {{ include "chaos.fullname" . }}
   labels:
-    {{- include "chaos2.labels" . | nindent 4 }}
+    {{- include "chaos.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "chaos2.selectorLabels" . | nindent 6 }}
+      {{- include "chaos.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
-        {{- include "chaos2.selectorLabels" . | nindent 8 }}
+        {{- include "chaos.selectorLabels" . | nindent 8 }}
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
     {{- end }}
-      serviceAccountName: {{ include "chaos2.serviceAccountName" . }}
+      serviceAccountName: {{ include "chaos.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
