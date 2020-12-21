@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  index.html: "<!DOCTYPE html>\n<html>\n<head>\n<link href=\"https://fonts.googleapis.com/css?family=Barriecito&display=swap\"
+    rel=\"stylesheet\">\n<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">\n<style>\n.altest{
+    font-family: 'Barriecito', cursive; }\n.blinking{\n    animation:blinkingText
+    2.9s infinite;\n}\n@keyframes blinkingText{\n    0%{     color: #000;    }\n    49%{
+    \   color: transparent; }\n    50%{    color: transparent; }\n    99%{    color:transparent;
+    \ }\n    100%{   color: #000;    }\n}\n.blink_img {\n  animation: blinker 2.8s
+    linear infinite;\n}\n@keyframes blinker { \n  50% { opacity: 0; }\n}\n@keyframes
+    blin { \n  50% { opacity: 0; }\n}\n</style>\n</head>\n<body>\n<div class=\"altest
+    w3-center\"><p class=\"w3-xxxlarge\">never got caught neither</p><p class=\"w3-xxlarge\"></p>\n<span
+    class=\"blink_img\"><img src=\"https://www.nicepng.com/png/full/67-679892_post-prison-mike.png\"
+    alt=\"centered image\" /></span>\n</body>\n</html>\n"
+metadata:
+  name: nginxhealth
+  namespace: chaos
